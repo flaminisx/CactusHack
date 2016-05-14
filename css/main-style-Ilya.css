@@ -1,35 +1,32 @@
-.ilya_line{
-	/*position:absolute;
-	margin-left: -2.5px;
-	top:2.9em;
-	left:50%;*/
+.line-container{
+	width:100%;
+	height: 100%;
+	position: fixed;
+	z-index: -1;
+}
+.circle{
 	margin:0 auto;
+	width:4em;
+	height:4em;
+	border:solid 4px #000;
+	border-radius:4em;
+	background: white;
+	z-index: 10;
+}
+.main-line{
 	width:5px;
-	height:34%;
+	height: 100%;
+	margin: 0 auto;
+	background: black;
 }
-
-.ilya_line_black{
-	background:black;
+.col.card.feature{
+	padding-left: 0;
+	padding-right: 0;
 }
-
-.ilya_main_circle {
-	margin:0 auto;
-	width:5em;
-	height:5em; 
-	border:solid 5px;
-	border-radius:5em; 
+.hline{
+	height:4px;
+	background: #000;
 }
-
-.ilya_line_black{
-	border:#000000;
-}
-
-.ilya_data{
-	font-size: 20px;
-	margin:0 auto;
-}
-
-.ilya-no-margin
-{
-	margin-bottom: 0 !important;	
+.no-margin{
+	margin-bottom: 0 !important;
 }
