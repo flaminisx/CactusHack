@@ -1,0 +1,39 @@
+.account, .projects{
+	padding: 10px 0 10px 0;
+}
+.account{
+	/*position:fixed;*/
+}
+.head-circle{
+	width:4em;
+	height:4em;
+	border:solid 4px #000;
+	border-radius:4em;
+	background: white;
+	z-index: 10;
+	margin-left: 2px;
+	transform: translateX(-50%);
+}
+.main-line{
+	width:5px;
+	height: 100%;
+	margin: 0 auto;
+	background: black;
+}
+.col.card.feature{
+	padding-left: 0;
+	padding-right: 0;
+
+}
+.hline{
+	height:4px;
+	background: #000;
+}
+.no-margin{
+	margin-bottom: 0 !important;
+}
+.row.valign-wrapper.right-card.no-margin{
+	border-left: 4px solid #000;
+	margin-left: 0;
+	margin-right: 0;
+}
