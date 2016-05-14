@@ -1,2 +1,31 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<header class="valign-wrapper">
+	<div class="container">
+		<div class='valign center'>
+			<%= image_tag "/images/"+((!@user.avatar.nil?)? @user.avatar : 'bg.jpg'), class: "head-img circle"%><br>
+			<h4 class="name"><%= @user.name %> <%= @user.surname %></h4>
+  			</div>
+		</div>
+	</div>
+</header>
+<div class="progress" style="margin:0">
+	<div class="determinate green" style="width: <%= @user.progress%>%"></div>
+</div>
+<main>
+	<div class="container">
+		<h3 class="center-align">Last Projects</h3>
+		<ul class="collection projects">
+			<% @projects.each do |q|%>
+			<li class="collection-item avatar" id='<%= q.id %>'>
+				<%= image_tag "/images/"+((!q.logo.nil?)? q.logo : 'bg.jpg'), class: "circle"%>
+				<span class="title"><%= q.name%></span>
+				<a class="secondary-content"><i class="material-icons">done</i></a>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</main>
+<footer class="page-footer grey darken-3">
+	<div class="container-fluid">
+		<div class="col s12 ">Made by LeenTeam in 2016</div>
+	</div>
+</footer>

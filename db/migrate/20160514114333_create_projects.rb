@@ -3,6 +3,7 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.text :description
+      t.string :logo
       t.string :portfolio_reference
       t.integer :owner_id
 

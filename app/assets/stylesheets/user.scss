@@ -1,3 +1,25 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+	height:470px;
+	background:#333;
+	background-size:cover;
+	color:white;
+}
+.head-img{
+	width:150px;
+	height:150px;
+}
+.center{
+	margin: 0 auto;
+}
+.projects{
+	
+}
+.projects>li{
+	cursor:pointer;
+}
+footer{
+	padding:13px;
+}

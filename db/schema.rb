@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514115941) do
+ActiveRecord::Schema.define(version: 20160514125146) do
 
   create_table "events", force: :cascade do |t|
     t.string   "photo"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 20160514115941) do
     t.integer  "project_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "preorders", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "project_tags", force: :cascade do |t|
@@ -32,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160514115941) do
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.string   "logo"
     t.string   "portfolio_reference"
     t.integer  "owner_id"
     t.datetime "created_at",          null: false
@@ -76,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160514115941) do
     t.string   "name"
     t.string   "surname"
     t.string   "email"
+    t.string   "avatar"
     t.string   "password_digest"
     t.string   "salt"
     t.datetime "created_at",      null: false
