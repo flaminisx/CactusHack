@@ -51,3 +51,10 @@
   main {
     flex: 1 0 auto;
   }
+
+  .back-logo
+  {
+  	height:65px;
+  	width:300px;
+  	background-size: 100% 100%;
+  }
