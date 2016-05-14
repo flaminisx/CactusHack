@@ -9,7 +9,8 @@ class UserController < ApplicationController
   	respond_to do |format|
   		format.json {
   		    render json: @user.to_json(:except => [:password_digest, :salt], 
-  		    	:include => [:projects])
+  		    	# :include => [:projects])
+)
 
   		# 	render json: {
   		# 			id:1, 
@@ -42,11 +43,8 @@ class UserController < ApplicationController
   def all
   	respond_to do |format|
   		format.json { 
-  			render json: {User.all.each do |user|
-  				user.to_json(:except => [:password_digest, :salt], 
+  			render json: User.find(1).to_json(:except => [:password_digest, :salt], 
   		    	:include => [:projects])
-  			end
-  		    }
   		}
   		format.html{ redirect_to '/404.html' }
   	end
