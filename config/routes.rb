@@ -1,4 +1,26 @@
 Rails.application.routes.draw do
+  get 'preorders/show'
+
+  get 'preorders/thanks'
+
+  get 'project/show'
+
+  get 'project/edit'
+
+  get 'team/show'
+
+  get 'team/edit'
+
+  get 'user/show'
+
+  get 'user/edit'
+
+  get 'search/index'
+
+  get 'portfolio/create'
+
+  get 'portfolio/view'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
