@@ -1,1 +1,20 @@
-Илья работай только тут
+.ilya_line{
+	margin:0 auto;
+	/*position:absolute;
+	top:2.9em;
+	left:50%;*/
+	width:5px;
+	height:94%;
+}
+
+.ilya_black{
+	background:black;
+}
+
+.ilya_circle {
+	margin:0 auto;
+	width:3em;
+	height:3em; 
+	border:#000000 solid 5px;
+	border-radius:5em; 
+}
