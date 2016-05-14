@@ -28,3 +28,26 @@
 {
 	border: 1px solid;
 }
+
+.main-color
+{
+	background: #3E454C !important;
+}
+.akcent-color
+{
+	background: #FF7F66;
+}
+.main-color-text
+{
+	color: #3E454C !important;
+}
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
