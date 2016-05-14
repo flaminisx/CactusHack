@@ -15,11 +15,9 @@
 					<a href="#" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @user.name %></a>
 				</div>
 				<div>
-					<div>
-		            	<% @tags.each do |t|%>
-		            	<div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
-		            	<% end %>
-          </div>
+		            <% @tags.each do |t|%>
+		            <div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
+		            <% end %>
 				</div>
 			</div>
 		</div>
