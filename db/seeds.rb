@@ -11,15 +11,15 @@ pass_1 = BCrypt::Engine.hash_secret('password_1', salt_1)
 pass_2 = BCrypt::Engine.hash_secret('password_2', salt_2)
 
 dann = User.create(name: 'Daniil', surname: 'Anichin', 
-	email: 'anichindaniil@gmail.com', salt: salt_1, 
+	email: 'anichindaniil@gmail.com', salt: salt_1, avatar: "a1.jpg",
 	password_digest: pass_1)
 igor = User.create(name: 'Igor', surname: 'TheBest', 
-	email: 'optimum.flaminis@gmail.com', salt: salt_2, 
+	email: 'optimum.flaminis@gmail.com', salt: salt_2, avatar: "ava2.jpg",
 	password_digest: pass_2)
 
 leen = Team.create(name: 'LeenTeam', speaker: igor) # jff, huh
 
-gimbl = Project.create(name: 'GIMBL', team: leen,
+gimbl = Project.create(name: 'GIMBL', team: leen, logo: "dune-rider.jpg"
 	description: 'Find what you need to quickly profit')
 
 UserTeam.create(user: dann, team: leen)
