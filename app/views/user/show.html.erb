@@ -15,11 +15,11 @@
 					<a href="#" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @user.name %></a>
 				</div>
 				<div>
-					<ul class="collection tags">
+					<div>
 		            	<% @tags.each do |t|%>
 		            	<div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
 		            	<% end %>
-		            </ul>
+          </div>
 				</div>
 			</div>
 		</div>
@@ -27,7 +27,6 @@
 			<div class="container projects">
 				<h4 class="center-align">Portfolio: </h4>
 				<div class="head-circle"></div>
-				<ul class="collection projects">
 				    <% @projects.each do |p|%>
 				        <div class="row valign-wrapper right-card no-margin">
 				        	<div class="col s4 valign hline"></div>
@@ -36,7 +35,7 @@
 				        		<img class="activator" src= "/images/<%= ((!p.logo.nil?) ? p.logo : 'bg.jpg')%>">
 				        		</div>
 				        		<div class="card-content">
-				        			<span class="card-title activator grey-text text-darken-4"><%= p.name %><i class="material-icons right">View more...</i></span>
+				        			<span class="card-title activator grey-text text-darken-4"><%= p.name %><i class="material-icons right">more_vert</i></span>
 				        			<p><a href="/project/<%= p.id %>">This is a project link</a></p>
 				        		</div>
 				        		<div class="card-reveal">
@@ -46,7 +45,6 @@
 				        	</div>
 				        </div>
 				    <% end %>
-				</ul>
 
 			</div>
 		</div>

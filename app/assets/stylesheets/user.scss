@@ -61,11 +61,11 @@
   	width:300px;
   	background-size: 100% 100%;
   }
-  .account, .projects{
-	padding: 10px 0 10px 0;
+.account{
+	padding: 20px 0 10px 0;
 }
 .account{
-	/*position:fixed;*/
+
 }
 .head-circle{
 	width:4em;
@@ -99,4 +99,8 @@
 	border-left: 4px solid #000;
 	margin-left: 0;
 	margin-right: 0;
+}
+.head-img{
+	max-width: 250px;
+	height: 250px;
 }
