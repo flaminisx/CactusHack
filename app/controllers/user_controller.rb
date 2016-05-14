@@ -5,12 +5,14 @@ class UserController < ApplicationController
   end
   def show
   	if(@user.nil?) then redirect_to '/login' end
+  	@teams = @user.teams
   	@projects = @user.projects
+  	@tags = @user.tags
   	respond_to do |format|
   		format.json {
   		    render json: @user.to_json(:except => [:password_digest, :salt])
   		}
-  		format.html{ render :show}
+  		format.html{ render :show, layout: 'layouts/account' }
   	end
   end
 

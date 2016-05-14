@@ -28,7 +28,7 @@ class ProjectController < ApplicationController
   end
   
   def create
-  	user = User.new(
+  	user = User.new(u
 	  					name: params['name'],
 	  					surname: params['surname'],
 	  					email: params['email'],

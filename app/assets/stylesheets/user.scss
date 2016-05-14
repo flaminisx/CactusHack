@@ -1,25 +1,102 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-header{
-	height:470px;
-	background:#333;
-	background-size:cover;
-	color:white;
+.margin-for-plus-photo
+{
+	margin:50px;
 }
-.head-img{
-	width:150px;
-	height:150px;
+
+.photo-active
+{
+	opacity:0.3;
+	transition:0.5s;
 }
-.center{
+
+.photo-active:hover
+{
+	opacity:1;
+}
+
+#all-my-blocks
+{
+	display:block;
+}
+
+#my-create-block
+{
+	display:none;
+}
+
+.border
+{
+	border: 1px solid;
+}
+
+.main-color
+{
+	background: #3E454C !important;
+}
+.akcent-color
+{
+	background: #FF7F66;
+}
+.main-color-text
+{
+	color: #3E454C !important;
+}
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .back-logo
+  {
+  	height:65px;
+  	width:300px;
+  	background-size: 100% 100%;
+  }
+  .account, .projects{
+	padding: 10px 0 10px 0;
+}
+.account{
+	/*position:fixed;*/
+}
+.head-circle{
+	width:4em;
+	height:4em;
+	border:solid 4px #000;
+	border-radius:4em;
+	background: white;
+	z-index: 10;
+	margin-left: 2px;
+	transform: translateX(-50%);
+}
+.main-line{
+	width:5px;
+	height: 100%;
 	margin: 0 auto;
+	background: black;
 }
-.projects{
-	
+.col.card.feature{
+	padding-left: 0;
+	padding-right: 0;
+
 }
-.projects>li{
-	cursor:pointer;
+.hline{
+	height:4px;
+	background: #000;
 }
-footer{
-	padding:13px;
+.no-margin{
+	margin-bottom: 0 !important;
+}
+.row.valign-wrapper.right-card.no-margin{
+	border-left: 4px solid #000;
+	margin-left: 0;
+	margin-right: 0;
 }
