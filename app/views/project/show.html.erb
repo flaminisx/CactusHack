@@ -1,2 +1,27 @@
-<h1>Project#show</h1>
-<p>Find me in app/views/project/show.html.erb</p>
+<header class="valign-wrapper">
+	<div class="container">
+		<div class="valign center">
+			<%= image_tag "/images/"+((!@project.logo.nil?) ? @project.logo : 'bg.jpg'), class: "head-img circle"%><br>
+			<h4 class="name"><%= @project.name %></h4>
+		</div>
+	</div>
+</header>
+<main>
+	<div class="container">
+		<h5 class="center-align">@project.description</h3>
+		<ul class="Events: ">
+			<% @projects.events.each do |e|%>
+			<li class="collection-item avatar" id='<%= e.id %>'>
+				<%= image_tag "/images/"+((!e.photo.nil?)? e.photo : 'bg.jpg'), class: "circle"%>
+				<span class="title"><%= e.description%></span>
+				<a class="secondary-content"><i class="material-icons">done</i></a>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</main>
+<footer class="page-footer grey darken-3">
+	<div class="container-fluid">
+		<div class="col s12 ">Made by LeenTeam in 2016</div>
+	</div>
+</footer>
