@@ -1,0 +1,30 @@
+.margin-for-plus-photo
+{
+	margin:50px;
+}
+
+.photo-active
+{
+	opacity:0.3;
+	transition:0.5s;
+}
+
+.photo-active:hover
+{
+	opacity:1;
+}
+
+#all-my-blocks
+{
+	display:block;
+}
+
+#my-create-block
+{
+	display:none;
+}
+
+.border
+{
+	border: 1px solid;
+}
