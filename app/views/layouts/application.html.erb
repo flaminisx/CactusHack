@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>Gimbl</title>
-  <%= stylesheet_link_tag    'application', params[:controller], media: 'all' %>
+  <%= stylesheet_link_tag    'application', params[:controller] %>
   <%= javascript_include_tag 'application', params[:controller] %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
 <body>
-	
+
 	<%= yield %>
 	<% if flash[:notice] %>
 	  	<script type="text/javascript">

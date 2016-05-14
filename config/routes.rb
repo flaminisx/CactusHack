@@ -1,26 +1,15 @@
 Rails.application.routes.draw do
   get 'preorders/show'
-
   get 'preorders/thanks'
-
   get 'project/show'
-
   get 'project/edit'
-
   get 'team/show'
-
   get 'team/edit'
-
   get 'user/show'
-
   get 'user/edit'
-
   get 'search/index'
-
   get 'portfolio/create'
-
   get 'portfolio/view'
-
   get 'user/all', to: 'user#all'
   get 'user/projects', to: 'user#projects'
   get 'user/:id', to: 'user#show', as: "user"
@@ -34,7 +23,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'main_page#index'
+  #root 'main_page#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
