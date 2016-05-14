@@ -11,16 +11,16 @@
     <div class="col l9">
       <input type="search" id="searchbar" value='some text'/>
       <ul class="collection">
-      <% 10.times do |i| %>
+      <% @data.each do |e, i| %>
         <li class="collection-item avatar rezult-item" id=<%= i %>>
-          <input type="hidden" name="type" value="type">
-          <input type="hidden" name= "id" value="1">
-          <img src="images/1.png" alt="" class="circle">
-          <span class="title">Title<%= i %></span>
+          <input type="hidden" name="type" value="<%= e[:type]%>">
+          <input type="hidden" name= "id" value="<%= e["id"] %>">
+          <img src="/images/<%= e["avatar"]%>" alt="" class="circle">
+          <span class="title"><%= e["name"] %></span>
           <p>desc
           </p>
           <a href="#!" class="secondary-content">
-            <div class="chip">#tag</div>
+            <div class="chip"><%= e[:type]%></div>
         </a>
         </li>
       <% end %>
