@@ -11,11 +11,9 @@
 					<a href="/user/<%= @speaker.id %>" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @speaker.name %></a>
 				</div>
 				<div>
-					<ul class="collection tags">
-		            	<% @tags.each do |t|%>
-		            	<div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
-		            	<% end %>
-		            </ul>
+		            <% @tags.each do |t|%>
+		            <div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
+		            <% end %>
 				</div>
 			</div>
 		</div>
@@ -23,7 +21,6 @@
 			<div class="container projects">
 				<h4 class="center-align">Portfolio: </h4>
 				<div class="head-circle"></div>
-				<ul class="collection events">
 				    <% @events.each do |e|%>
 				        <% if e.nil? then continue end %>
 				        <div class="row valign-wrapper right-card no-margin">
@@ -43,8 +40,6 @@
 				        	</div>
 				        </div>
 				    <% end %>
-				</ul>
-
 			</div>
 		</div>
 	</div>

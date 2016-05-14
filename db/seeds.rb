@@ -24,8 +24,18 @@ dryv = Team.create(name: 'DRY-V', speaker: dan)
 
 gimbl = Project.create(name: 'GIMBL', team: leen, logo: '2.png', 
 	description: 'Find what you need to quickly profit')
-on_point = Project.create(name: 'DRY-V', team: dryv, logo: 'a1.png', 
+on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'a1.png', 
 	description: 'The new way to spend time')
+
+Event.create(photo: 'bg.jpg', description: 'Started local server', 
+	link: 'localhost:3000', project: gimbl, created_at: '2016-05-14T16:36:12.060Z')
+Event.create(photo: 'bg.jpg', description: 'Added pretty view', 
+	link: 'localhost:3000', project: gimbl, created_at: '2016-05-14T20:36:12.060Z')
+Event.create(photo: 'bg.jpg', description: 'Started local server', 
+	link: 'localhost:3000', project: on_point, created_at: '2016-03-28T16:36:12.060Z')
+Event.create(photo: 'bg.jpg', description: 'Added pretty view', 
+	link: 'localhost:3000', project: on_point, created_at: '2016-04-28T20:36:12.060Z')
+
 
 UserTeam.create(user: dann, team: leen)
 UserTeam.create(user: igor, team: leen)
@@ -51,6 +61,9 @@ UserTag.create(user: dann, tag: python)
 UserTag.create(user: dann, tag: ruby)
 UserTag.create(user: igor, tag: JS)
 UserTag.create(user: igor, tag: ruby)
+UserTag.create(user: igor, tag: JS)
+UserTag.create(user: igor, tag: manager)
+UserTag.create(user: igor, tag: designer)
 
 TeamTag.create(team: leen, tag: designer)
 TeamTag.create(team: leen, tag: investor)
@@ -61,3 +74,6 @@ ProjectTag.create(project: gimbl, tag: startups)
 ProjectTag.create(project: gimbl, tag: aaas)
 ProjectTag.create(project: gimbl, tag: saas)
 
+ProjectTag.create(project: on_point, tag: startups)
+ProjectTag.create(project: on_point, tag: quests)
+ProjectTag.create(project: on_point, tag: saas)
