@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gimbl</title>
+  <%= stylesheet_link_tag    'application', params[:controller], media: 'all' %>
+  <%= javascript_include_tag 'application', params[:controller] %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+	<style>
+	header, main, footer, nav {
+      padding-left: 250px;
+    }
+     @media only screen and (max-width : 992px) {
+      header, main, footer, nav {
+        padding-left: 0;
+      }
+    }
+	.head-img{
+		width:100px;
+		height:100px;
+	}
+	.center{
+		margin: 0 auto;
+	}
+    </style>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo"><%= yield(:title) %></a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+<!-- 				<li><a href="sass.html">Sass</a></li>
+				<li><a href="badges.html">Components</a></li>
+				<li><a href="collapsible.html">JavaScript</a></li> -->
+			</ul>
+		</div>
+  	</nav>
+	<ul id="slide-out" class="side-nav fixed">
+		<div class="container ">
+			<div class='valign center'>
+				<%= image_tag "/images/"+((!@current_user.avatar.nil?)? @current_user.avatar : 'bg.jpg'), class: "head-img circle"%><br>
+				<h4 class="name"><%= @current_user.name %> <%= @current_user.surname %></h4>
+			</div>
+		</div>
+		<div class="divider"></div>
+      <li><%= link_to "My Projects", :user_projects%></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <main>
+    	<div class="container">
+			<%= yield %>
+		</div>
+	</main>
+	<% if flash[:notice] %>
+	  	<script type="text/javascript">
+	  		$(document).ready(function(){
+	  			Materialize.toast('<%= flash[:notice]%>', 4000);
+	  		});
+	  	</script>
+	<% end %>
+</body>
+</html>
