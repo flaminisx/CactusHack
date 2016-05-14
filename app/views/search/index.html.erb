@@ -1,2 +1,29 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
+<div class="container">
+  <h4>Search</h4>
+  <div class="row">
+    <div class="col l3">
+      <ul class="collection">
+        <li class="collection-item">People</li>
+        <li class="collection-item">Teams</li>
+        <li class="collection-item">Projects</li>
+      </ul>
+    </div>
+    <div class="col l9">
+      <input type="search" id="searchbar" value='some text'/>
+      <ul class="collection">
+      <% 10.times do |i| %>
+        <li class="collection-item avatar rezult-item" id=<%= i %>>
+          <input type="hidden" name="type" value="type">
+          <input type="hidden" name= "id" value="1">
+          <img src="images/1.png" alt="" class="circle">
+          <span class="title">Title<%= i %></span>
+          <p>desc
+          </p>
+          <a href="#!" class="secondary-content">
+            <div class="chip">#tag</div>
+        </a>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</div>

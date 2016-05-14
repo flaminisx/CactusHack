@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'team/edit'
   get 'user/show'
   get 'user/edit'
-  get 'search/index'
+  get 'search/', to: 'search#index'
   get 'portfolio/create'
   get 'portfolio/view'
   get 'user/all', to: 'user#all'
