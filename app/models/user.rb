@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	validates_uniqueness_of :email
 
-	after_touch :collect_projects
+	# after_touch :collect_projects
 
 	    public
     def projects
