@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   get 'preorders/show'
   get 'preorders/thanks'
+  
   get 'project/:id', to: 'project#show', as: "project"
+  get 'team/:id', to: 'team#show', as: "team"
 
-  get 'project/edit'
-  get 'team/show'
-  get 'team/edit'
   get 'user/show'
   get 'user/edit'
   get 'search/', to: 'search#index'
