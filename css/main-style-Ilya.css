@@ -22,4 +22,12 @@
 .col.card.feature{
 	padding-left: 0;
 	padding-right: 0;
+
+}
+.hline{
+	height:4px;
+	background: #000;
+}
+.no-margin{
+	margin-bottom: 0 !important;
 }
