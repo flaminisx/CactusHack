@@ -1,9 +1,8 @@
 <header class="valign-wrapper">
 	<div class="container">
-		<div class='valign center'>
+		<div class="valign center">
 			<%= image_tag "/images/"+((!@user.avatar.nil?)? @user.avatar : 'bg.jpg'), class: "head-img circle"%><br>
 			<h4 class="name"><%= @user.name %> <%= @user.surname %></h4>
-  			</div>
 		</div>
 	</div>
 </header>
