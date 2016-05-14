@@ -10,6 +10,5 @@ class ApplicationController < ActionController::Base
   	else
   		@current_user = User.find(session[:user_id])
   	end
-
   end
 end

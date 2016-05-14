@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 	before_action :getUser, only:[:show]
   def getUser
-  	@user = (params[:id])? User.find(params[:id]): User.find(session[:user_id])
+  	@user = (params[:id]) ? User.find(params[:id]) : User.find(session[:user_id])
   end
   def show
   	if(@user.nil?) then redirect_to '/login' end

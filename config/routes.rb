@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'preorders/show'
   get 'preorders/thanks'
-  get 'project/show'
+  get 'project/:id', to: 'project#show', as: "project"
+
   get 'project/edit'
   get 'team/show'
   get 'team/edit'

@@ -1,27 +1,51 @@
-<header class="valign-wrapper">
-	<div class="container">
-		<div class="valign center">
-			<%= image_tag "/images/"+((!@project.logo.nil?) ? @project.logo : 'bg.jpg'), class: "head-img circle"%><br>
-			<h4 class="name"><%= @project.name %></h4>
+<main class="container-fluid">
+	<div class="row">
+		<div class="col l4">
+			<div class="container account">
+				<div class="valign center">
+					<%= image_tag "/images/"+((!@project.logo.nil?) ? @project.logo : 'bg.jpg'), class: "head-img circle"%><br>
+			        <h4 class="name"><%= @project.name %></h4>
+				</div>
+				<div class="collection">
+					<p class="collection-item">Team:<span class="badge"><a href="/team/<%= @team.id %>"><%= @team.name %></a></span></p>
+					<a href="/user/<%= @speaker.id %>" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @speaker.name %></a>
+				</div>
+				<div>
+					<ul class="collection tags">
+		            	<% @tags.each do |t|%>
+		            	<div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
+		            	<% end %>
+		            </ul>
+				</div>
+			</div>
+		</div>
+		<div class="col l8">
+			<div class="container projects">
+				<h4 class="center-align">Portfolio: </h4>
+				<div class="head-circle"></div>
+				<ul class="collection events">
+				    <% @events.each do |e|%>
+				        <% if e.nil? then continue end %>
+				        <div class="row valign-wrapper right-card no-margin">
+				        	<div class="col s4 valign hline"></div>
+				        	<div class="col s8 card feature">
+				        		<div class="card-image waves-effect waves-block waves-light">
+				        		<img class="activator" src= "/images/<%= ((!e.photo.nil?) ? e.photo : 'bg.jpg')%>">
+				        		</div>
+				        		<div class="card-content">
+				        			<span class="card-title activator grey-text text-darken-4"><%= e.created_at %><i class="material-icons right">View more...</i></span>
+				        			<p><a href="<%= e.link %>">This is a result link</a></p>
+				        		</div>
+				        		<div class="card-reveal">
+				        			<span class="card-title grey-text text-darken-4"><%= e.created_at %><i class="material-icons right">Close</i></span>
+				        			<p><%= e.description %></p>
+				        		</div>
+				        	</div>
+				        </div>
+				    <% end %>
+				</ul>
+
+			</div>
 		</div>
 	</div>
-</header>
-<main>
-	<div class="container">
-		<h5 class="center-align">@project.description</h3>
-		<ul class="Events: ">
-			<% @projects.events.each do |e|%>
-			<li class="collection-item avatar" id='<%= e.id %>'>
-				<%= image_tag "/images/"+((!e.photo.nil?)? e.photo : 'bg.jpg'), class: "circle"%>
-				<span class="title"><%= e.description%></span>
-				<a class="secondary-content"><i class="material-icons">done</i></a>
-			</li>
-			<% end %>
-		</ul>
-	</div>
 </main>
-<footer class="page-footer grey darken-3">
-	<div class="container-fluid">
-		<div class="col s12 ">Made by LeenTeam in 2016</div>
-	</div>
-</footer>
