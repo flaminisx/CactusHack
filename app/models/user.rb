@@ -16,11 +16,12 @@ class User < ActiveRecord::Base
 
 	after_touch :collect_projects
 
-	    private
-    def collect_projects
-    	self.@projects = []
+	    public
+    def projects
+    	projects = []
     	self.teams.each do |team|
-    		self.@projects.push(*team.projects)
+    		projects.push(*team.projects)
     	end
+    	projects
     end
 end

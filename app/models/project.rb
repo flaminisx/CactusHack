@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-	belongs_to :owner, class_name: "Team"
+	belongs_to :team
 	has_many :events
 
 	has_many :project_tags

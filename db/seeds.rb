@@ -19,7 +19,7 @@ igor = User.create(name: 'Igor', surname: 'TheBest',
 
 leen = Team.create(name: 'LeenTeam', speaker: igor) # jff, huh
 
-gimbl = Project.create(name: 'GIMBL', owner: leen,
+gimbl = Project.create(name: 'GIMBL', team: leen,
 	description: 'Find what you need to quickly profit')
 
 UserTeam.create(user: dann, team: leen)
