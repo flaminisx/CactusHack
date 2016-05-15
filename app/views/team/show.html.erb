@@ -1,0 +1,47 @@
+<main class="container-fluid">
+	<div class="row">
+		<div class="col l4">
+			<div class="container account">
+				<div class="valign center">
+					<%= image_tag "/images/"+((!@speaker.avatar.nil?) ? @speaker.avatar : 'bg.jpg'), class: "head-img circle"%><br>
+			        <h4 class="name"><%= @team.name %></h4>
+				</div>
+				<!-- <div class="divider"></div> -->
+				<div class="collection">
+					<a href="/user/<%= @speaker.id%>" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @speaker.name %></a>
+				</div>
+				<div>
+					<p>We need: </p><br>
+		            <% @tags.each do |t|%>
+		            <div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
+		            <% end %>
+				</div>
+			</div>
+		</div>
+		<div class="col l8">
+			<div class="container projects">
+				<h4 class="center-align">Portfolio: </h4>
+				<div class="head-circle"></div>
+				    <% @projects.each do |p|%>
+				        <div class="row valign-wrapper right-card no-margin">
+				        	<div class="col s5 valign hline"></div>
+				        	<div class="col s7 card feature">
+				        		<div class="card-image waves-effect waves-block waves-light">
+				        		<img class="activator" src= "/images/<%= ((!p.logo.nil?) ? p.logo : 'bg.jpg')%>">
+				        		</div>
+				        		<div class="card-content">
+				        			<span class="card-title activator grey-text text-darken-4"><%= p.name %><i class="material-icons right">more_vert</i></span>
+				        			<p><a href="/project/<%= p.id %>">This is a project link</a></p>
+				        		</div>
+				        		<div class="card-reveal">
+				        			<span class="card-title grey-text text-darken-4"><%= p.name %><i class="material-icons right">Close</i></span>
+				        			<p><%= p.description %></p>
+				        		</div>
+				        	</div>
+				        </div>
+				    <% end %>
+
+			</div>
+		</div>
+	</div>
+</main>
