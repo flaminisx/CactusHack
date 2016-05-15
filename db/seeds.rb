@@ -92,6 +92,7 @@ quests = Tag.create(tag: 'Quests')
 startups = Tag.create(tag: 'Startups')
 saas = Tag.create(tag: 'SaaS')
 aaas = Tag.create(tag: 'Acselerator aaS')
+ceo = Tag.create(tag: 'CEO')
 
 UserTag.create(user: dann, tag: python)
 UserTag.create(user: dann, tag: ruby)
@@ -105,11 +106,20 @@ UserTag.create(user: dan, tag: designer)
 UserTag.create(user: iliya, tag: back)
 UserTag.create(user: iliya, tag: designer)
 
+UserTag.create(user: aleck, tag: manager)
+UserTag.create(user: aleck, tag: python)
+
+UserTag.create(user: yarick, tag: ceo)
+UserTag.create(user: yarick, tag: designer)
+
 TeamTag.create(team: leen, tag: designer)
 TeamTag.create(team: leen, tag: investor)
 
 TeamTag.create(team: dryv, tag: designer)
 TeamTag.create(team: dryv, tag: investor)
+
+TeamTag.create(team: skynet, tag: designer)
+TeamTag.create(team: skynet, tag: investor)
 
 ProjectTag.create(project: gimbl, tag: startups)
 ProjectTag.create(project: gimbl, tag: aaas)
@@ -119,6 +129,6 @@ ProjectTag.create(project: on_point, tag: startups)
 ProjectTag.create(project: on_point, tag: quests)
 ProjectTag.create(project: on_point, tag: saas)
 
-ProjectTag.create(project: skynet, tag: startups)
-ProjectTag.create(project: skynet, tag: aaas)
-ProjectTag.create(project: skynet, tag: saas)
+ProjectTag.create(project: pitcube, tag: startups)
+ProjectTag.create(project: pitcube, tag: aaas)
+ProjectTag.create(project: pitcube, tag: saas)
