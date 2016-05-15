@@ -9,25 +9,79 @@ salt_1 = BCrypt::Engine.generate_salt
 pass_1 = BCrypt::Engine.hash_secret('password_1', salt_1)
 
 dann = User.create(name: 'Daniil', surname: 'Anichin', 
-	email: 'anichindaniil@gmail.com', salt: salt_1, avatar: 'a1.jpg',
+	email: 'anichindaniil@gmail.com', salt: salt_1, avatar: 'daniil.jpg',
 	password_digest: pass_1, free: false)
+
 igor = User.create(name: 'Igor', surname: 'TheBest', 
-	email: 'optimum.flaminis@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'optimum.flaminis@gmail.com', salt: salt_1, avatar: 'igor.jpg',
 	password_digest: pass_1, free: false)
+
 dan = User.create(name: 'Danil', surname: 'Sizov', 
-	email: 'danilsizov3@gmail.com', salt: salt_1, avatar: 'a1.jpg',
+	email: 'danilsizov3@gmail.com', salt: salt_1, avatar: 'danil.jpg',
 	password_digest: pass_1, free: true)
+
 iliya = User.create(name: 'Iliya', surname: 'Chernyavskiy', 
-	email: 'iliachernyavsckiy@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'iliachernyavsckiy@gmail.com', salt: salt_1, avatar: 'iliya.jpg',
 	password_digest: pass_1, free: true)
 
-leen = Team.create(name: 'LeenTeam', speaker: dan) # jff, huh
-dryv = Team.create(name: 'DRY-V', speaker: dan)
+aleck = User.create(name: 'Alecksandr', surname: 'Neskin', 
+	email: 'untitled_1@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
 
-gimbl = Project.create(name: 'GIMBL', team: leen, logo: '2.png', 
-	description: 'Find what you need to quickly profit')
-on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'a1.png', 
-	description: 'The new way to spend time')
+yarick =  User.create(name: 'Yaroslav', surname: 'Agnuck', 
+	email: 'untitled_2@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: true)
+
+lyab = User.create(name: 'Alecksandr', surname: 'Lyabuh', 
+	email: 'untitled_3@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
+
+avram = User.create(name: 'Liza', surname: 'Avramenko', 
+	email: 'untitled_4@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: true)
+
+ivan = User.create(name: 'Ivan', surname: 'Ablamsckiy', 
+	email: 'ivan_a@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
+
+petr = User.create(name: 'Petr', surname: 'Bondarevskiy', 
+	email: 'ivan_a@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
+
+leen = Team.create(name: 'LeenTeam', speaker: dan, free: false, 
+    places: 2) # jff, huh
+
+dryv = Team.create(name: 'DRY-V', speaker: dan, free: false, 
+	places: 3)
+
+skynet = Team.create(name: 'SkyNet', speaker: aleck, free: true, 
+	places: 4)
+
+moonton = Team.create(name: 'MoonTon', speaker: avram, free: true, 
+	places: 3)
+
+coppertino = Team.create(name: 'Coppertino', speaker: avram, free: true, 
+	places: 5)
+
+gimbl = Project.create(name: 'GIMBL', team: leen, logo: 'logo.png', 
+	description: 'Find what you need to quickly profit', 
+	plan: 'One\nTwo\nThree', money: 'milliom grivnas')
+
+on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'bg.jpg', 
+	description: 'The new way to spend time', 
+	plan: 'First\nSecond\nTrird', money: '1000 $')
+
+pitcube = Project.create(name: 'PetCube', team: skynet, logo: 'a1.png', 
+	description: 'Robots for animals - this is a reality.', 
+	plan: 'Cat\nDog\nParrot', money: '10000 UA')
+
+check_io = Project.create(name: 'Check-IO', team: moonton, logo: 'a1.png', 
+	description: 'Online Game for developers', 
+	plan: 'Ukraine\nEurope\nWorld', money: '750000 UA')
+
+vox = Project.create(name: 'VOX', team: coppertino, logo: 'a1.png', 
+	description: 'The besr iTunes"s analog', 
+	plan: 'Ukraine\niPad\niMac', money: '7000 $')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for GIMBL', 
 	link: 'localhost:3000', project: gimbl, created_at: '2016-05-14T16:36:12.060Z',
@@ -35,6 +89,7 @@ Event.create(photo: 'bg.jpg', description: 'Started local server for GIMBL',
 Event.create(photo: 'bg.jpg', description: 'Added pretty view for projects', 
 	link: 'localhost:3000', project: gimbl, created_at: '2016-05-14T20:36:12.060Z',
 	heading: 'Views')
+
 Event.create(photo: 'bg.jpg', description: 'Started local server for OnPoint', 
 	link: 'localhost:3000', project: on_point, created_at: '2016-03-28T16:36:12.060Z',
 	heading: 'Server')
@@ -42,13 +97,45 @@ Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests',
 	link: 'localhost:3000', project: on_point, created_at: '2016-04-28T20:36:12.060Z', 
 	heading: 'Views')
 
+Event.create(photo: 'bg.jpg', description: 'Started local server for Pitcube', 
+	link: 'localhost:3000', project: pitcube, created_at: '2016-03-28T16:36:12.060Z',
+	heading: 'Server')
+Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
+	link: 'localhost:3000', project: pitcube, created_at: '2016-04-28T20:36:12.060Z', 
+	heading: 'Views')
+
+Event.create(photo: 'bg.jpg', description: 'Started local server for Check-IO', 
+	link: 'localhost:3000', project: check_io, created_at: '2016-03-28T16:36:12.060Z',
+	heading: 'Server')
+Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
+	link: 'localhost:3000', project: check_io, created_at: '2016-04-28T20:36:12.060Z', 
+	heading: 'Views')
+
+Event.create(photo: 'bg.jpg', description: 'Started local server for Coppertino', 
+	link: 'localhost:3000', project: coppertino, created_at: '2016-03-28T16:36:12.060Z',
+	heading: 'Server')
+Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
+	link: 'localhost:3000', project: coppertion, created_at: '2016-04-28T20:36:12.060Z', 
+	heading: 'Views')
+
+
 UserTeam.create(user: iliya, team: leen)
 UserTeam.create(user: dann, team: leen)
 UserTeam.create(user: igor, team: leen)
 UserTeam.create(user: dan, team: leen)
+
 UserTeam.create(user: dann, team: dryv)
 UserTeam.create(user: igor, team: dryv)
 UserTeam.create(user: dan, team: dryv)
+
+UserTeam.create(user: aleck, team: skynet)
+UserTeam.create(user: yarick, team: skynet)
+
+UserTeam.create(user: avram, team: moonton)
+UserTeam.create(user: lyab, team: moonton)
+
+UserTeam.create(user: ivan, team: coppertino)
+UserTeam.create(user: petr, team: coppertino)
 
 manager = Tag.create(tag: 'manager')
 designer = Tag.create(tag: 'designer')
@@ -63,21 +150,58 @@ quests = Tag.create(tag: 'Quests')
 startups = Tag.create(tag: 'Startups')
 saas = Tag.create(tag: 'SaaS')
 aaas = Tag.create(tag: 'Acselerator aaS')
+game = Tag.create(tag: 'Game')
+ceo = Tag.create(tag: 'CEO')
+iMac = Tag.create(tag: 'iMac')
 
 UserTag.create(user: dann, tag: python)
 UserTag.create(user: dann, tag: ruby)
+
 UserTag.create(user: igor, tag: JS)
 UserTag.create(user: igor, tag: ruby)
-UserTag.create(user: igor, tag: JS)
+
 UserTag.create(user: dan, tag: manager)
 UserTag.create(user: dan, tag: designer)
+
 UserTag.create(user: iliya, tag: back)
 UserTag.create(user: iliya, tag: designer)
 
+UserTag.create(user: aleck, tag: manager)
+UserTag.create(user: aleck, tag: python)
+
+UserTag.create(user: yarick, tag: ceo)
+UserTag.create(user: yarick, tag: designer)
+
+UserTag.create(user: avram, tag: ceo)
+UserTag.create(user: avram, tag: manager)
+
+UserTag.create(user: lyab, tag: python)
+UserTag.create(user: lyab, tag: JS)
+UserTag.create(user: lyab, tag: ruby)
+UserTag.create(user: lyab, tag: back)
+
+UserTag.create(user: ivan, tag: ceo)
+UserTag.create(user: ivan, tag: manager)
+
+UserTag.create(user: petr, tag: python)
+UserTag.create(user: petr, tag: JS)
+UserTag.create(user: petr, tag: ruby)
+UserTag.create(user: petr, tag: back)
+
 TeamTag.create(team: leen, tag: designer)
 TeamTag.create(team: leen, tag: investor)
+
 TeamTag.create(team: dryv, tag: designer)
 TeamTag.create(team: dryv, tag: investor)
+
+TeamTag.create(team: skynet, tag: designer)
+TeamTag.create(team: skynet, tag: investor)
+
+TeamTag.create(team: moonton, tag: designer)
+TeamTag.create(team: moonton, tag: investor)
+
+TeamTag.create(team: coppertino, tag: designer)
+TeamTag.create(team: coppertino, tag: investor)
 
 ProjectTag.create(project: gimbl, tag: startups)
 ProjectTag.create(project: gimbl, tag: aaas)
@@ -86,3 +210,15 @@ ProjectTag.create(project: gimbl, tag: saas)
 ProjectTag.create(project: on_point, tag: startups)
 ProjectTag.create(project: on_point, tag: quests)
 ProjectTag.create(project: on_point, tag: saas)
+
+ProjectTag.create(project: pitcube, tag: startups)
+ProjectTag.create(project: pitcube, tag: aaas)
+ProjectTag.create(project: pitcube, tag: saas)
+
+ProjectTag.create(project: check_io, tag: startups)
+ProjectTag.create(project: check_io, tag: aaas)
+ProjectTag.create(project: check_io, tag: game)
+
+ProjectTag.create(project: coppertino, tag: startups)
+ProjectTag.create(project: coppertino, tag: aaas)
+ProjectTag.create(project: coppertino, tag: iMac)

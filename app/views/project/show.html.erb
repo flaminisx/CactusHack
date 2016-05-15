@@ -7,18 +7,27 @@
 			        <h4 class="name"><%= @project.name %></h4>
 				</div>
 				<div class="collection">
-					<p class="collection-item">Team:<span class="badge"><a href="/team/<%= @team.id %>"><%= @team.name %></a></span></p>
-					<a href="/user/<%= @speaker.id %>" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @speaker.name %></a>
-				</div>
-				<div>
-		            <% @tags.each do |t|%>
-		            <div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
-		            <% end %>
-				</div>
-				<div>
-					<p>
+					<p class="collection-item">Team:<span class="chip"><a href="/team/<%= @team.id %>"><%= @team.name %></a></span></p>
+					<a href="/user/<%=@speaker.id %>" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @speaker.name %></a>
+				    <div class="collection-item">
+		                <% @tags.each do |t|%>
+		                    <div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
+		                <% end %>
+				    </div>
+					<p class="collection-item">
 						<%= @project.description %>
 					</p>
+					<% if !@plan.nil? %>
+					    <p class="collection-item">   Our plan is: </p>
+					    <ul class="collection-item">
+					    	<% @plan.each do |p| %>
+					    	    <li><%= p %></li>
+                            <% end %>
+					    </ul>
+					<% end %>
+					<% if !@project.money.nil? %>
+					    <p class="collection-item">And we need <%= @project.money %>.</p>
+					<% end %>
 				</div>
 			</div>
 		</div>
@@ -39,7 +48,7 @@
 				        			<p><a href="<%= e.link %>">This is a result link</a></p>
 				        		</div>
 				        		<div class="card-reveal">
-				        			<span class="card-title grey-text text-darken-4"><%= e.created_at %><i class="material-icons right">Close</i></span>
+				        			<span class="card-title grey-text text-darken-4"><%= e.created_at %><i class="material-icons right">more_vert</i></span>
 				        			<p><%= e.description %></p>
 				        		</div>
 				        	</div>

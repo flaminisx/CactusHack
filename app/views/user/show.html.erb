@@ -12,11 +12,16 @@
 				<div class="collection">
 					<p class="collection-item center-align"><%= @user.email %></p>
 					<% if @teams.size != 0 then %>
-					    <p class="collection-item">Team:<span class="badge"><a href="/team/<%= @teams[0].id %>"><%= @teams[0].name %></a></span></p>
+					    <p class="collection-item">Team:
+					        <% @teams.each do |t| %>
+					            <span class="chip"><a href="/team/<%= t.id %>"><%= t.name %></a></span>
+					        <% end %>
+					    </p>
 					<% end %>
+                    <p class="collection-item"><%= @user.free ? 'Ready to work' : 'Extremly busy' %></p>
 					<a href="#" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @user.name %></a>
 				</div>
-				<div>
+				<div class="collection-item">
 		            <% @tags.each do |t|%>
 		            <div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
 		            <% end %>
@@ -39,8 +44,10 @@
 				        			<p><a href="/project/<%= p.id %>">This is a project link</a></p>
 				        		</div>
 				        		<div class="card-reveal">
-				        			<span class="card-title grey-text text-darken-4"><%= p.name %><i class="material-icons right">Close</i></span>
+				        			<span class="card-title grey-text text-darken-4"><%= p.name %><i class="material-icons right">more_vert</i></span>
 				        			<p><%= p.description %></p>
+				        			<p><%= p.plan.gsub!('\n', '<br>') %></p>
+				        			<p>We need <%= p.money %></p>
 				        		</div>
 				        	</div>
 				        </div>

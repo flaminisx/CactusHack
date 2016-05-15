@@ -6,6 +6,9 @@ class ProjectController < ApplicationController
   	@team = @project.team
   	@speaker = @team.speaker
   	@tags = @project.tags
+  	if(!@project.plan.nil?) then 
+        @plan = @project.plan.split('\n')
+    end 
   	respond_to do |format|
   		format.json {
   		    render json: @project.to_json()
