@@ -56,6 +56,22 @@ dima = User.create(name: 'Dmitriy', surname: 'Samoilenlo',
 	email: 'dima_s@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
+vlad = User.create(name: 'Vladislav', surname: 'Teslenko', 
+	email: 'vlad_t@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
+
+tolik = User.create(name: 'Anatoliy', surname: 'Donchenko', 
+	email: 'tolya_d@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
+
+kirill = User.create(name: 'Kirill', surname: 'Zernovoy', 
+	email: 'tolya_d@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
+
+miron = User.create(name: 'Miron', surname: 'Grechihin', 
+	email: 'tolya_d@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
+
 leen = Team.create(name: 'LeenTeam', speaker: dan, free: false, 
     places: 2) # jff, huh
 
@@ -74,6 +90,11 @@ coppertino = Team.create(name: 'Coppertino', speaker: petr, free: true,
 quad = Team.create(name: 'Quad-Squad', speaker: anton, free: true, 
 	places: 5)
 
+laser = Team.create(name: 'LED-developers', speaker: vlad, free: true, 
+	places: 2)
+
+jteam = Team.create(name: 'JTeam', speaker: miron, free: true, 
+	places: 2)
 
 gimbl = Project.create(name: 'GIMBL', team: leen, logo: 'logo.png', 
 	description: 'Find what you need to quickly profit', 
@@ -97,7 +118,15 @@ vox = Project.create(name: 'VOX', team: coppertino, logo: 'a1.png',
 
 talk = Project.create(name: 'Enable-Talk', team: quad, logo: 'a1.png', 
 	description: 'The besr iTunes"s analog', 
-	plan: 'Ukraine\niPad\niMac', money: '7000 $')
+	plan: 'Ukraine\niPad\niMac', money: '13000 $')
+
+iBlazer = Project.create(name: 'iBlazer', team: laser, logo: 'a1.png', 
+	description: 'The besr iTunes"s analog', 
+	plan: 'Ukraine\niPad\niMac', money: '60000 $')
+
+jeapie = Project.create(name: 'Jeapie', team: jteam, logo: 'a1.png', 
+	description: 'The besr iTunes"s analog', 
+	plan: 'Ukraine\niPad\niMac', money: '60000 $')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for GIMBL', 
 	link: '/', project: gimbl, created_at: '2016-05-14T16:36:12.060Z',
@@ -141,6 +170,20 @@ Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests',
 	link: '/', project: talk, created_at: '2016-04-28T20:36:12.060Z', 
 	heading: 'Views')
 
+Event.create(photo: 'bg.jpg', description: 'Started local server for Coppertino', 
+	link: '/', project: iBlazer, created_at: '2016-03-28T16:36:12.060Z',
+	heading: 'Server')
+Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
+	link: '/', project: iBlazer, created_at: '2016-04-28T20:36:12.060Z', 
+	heading: 'Views')
+
+Event.create(photo: 'bg.jpg', description: 'Started local server for Coppertino', 
+	link: '/', project: jeapie, created_at: '2016-03-28T16:36:12.060Z',
+	heading: 'Server')
+Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
+	link: '/', project: jeapie, created_at: '2016-04-28T20:36:12.060Z', 
+	heading: 'Views')
+
 
 UserTeam.create(user: iliya, team: leen)
 UserTeam.create(user: dann, team: leen)
@@ -162,6 +205,12 @@ UserTeam.create(user: petr, team: coppertino)
 
 UserTeam.create(user: dima, team: quad)
 UserTeam.create(user: anton, team: quad)
+
+UserTeam.create(user: vlad, team: laser)
+UserTeam.create(user: tolik, team: laser)
+
+UserTeam.create(user: kirill, team: jteam)
+UserTeam.create(user: miron, team: jteam)
 
 
 manager = Tag.create(tag: 'manager')
@@ -221,6 +270,18 @@ UserTag.create(user: dima, tag: manager)
 UserTag.create(user: anton, tag: ceo)
 UserTag.create(user: anton, tag: manager)
 
+UserTag.create(user: vlad, tag: ceo)
+UserTag.create(user: vlad, tag: manager)
+
+UserTag.create(user: tolik, tag: ceo)
+UserTag.create(user: tolik, tag: manager)
+
+UserTag.create(user: kirill, tag: ceo)
+UserTag.create(user: kirill, tag: manager)
+
+UserTag.create(user: miron, tag: ceo)
+UserTag.create(user: miron, tag: manager)
+
 TeamTag.create(team: leen, tag: designer)
 TeamTag.create(team: leen, tag: investor)
 
@@ -238,6 +299,12 @@ TeamTag.create(team: coppertino, tag: investor)
 
 TeamTag.create(team: quad, tag: designer)
 TeamTag.create(team: quad, tag: investor)
+
+TeamTag.create(team: laser, tag: designer)
+TeamTag.create(team: laser, tag: investor)
+
+TeamTag.create(team: jteam, tag: designer)
+TeamTag.create(team: jteam, tag: investor)
 
 ProjectTag.create(project: gimbl, tag: startups)
 ProjectTag.create(project: gimbl, tag: aaas)
@@ -262,3 +329,11 @@ ProjectTag.create(project: vox, tag: iMac)
 ProjectTag.create(project: talk, tag: startups)
 ProjectTag.create(project: talk, tag: aaas)
 ProjectTag.create(project: talk, tag: iMac)
+
+ProjectTag.create(project: iBlazer, tag: startups)
+ProjectTag.create(project: iBlazer, tag: aaas)
+ProjectTag.create(project: iBlazer, tag: iMac)
+
+ProjectTag.create(project: jeapie, tag: startups)
+ProjectTag.create(project: jeapie, tag: aaas)
+ProjectTag.create(project: jeapie, tag: iMac)
