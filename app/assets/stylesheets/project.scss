@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .margin-for-plus-photo
 {
-	margin:50px;
+	margin:0 auto;
+	margin-top:50px;
 }
 
 .photo-active
@@ -103,4 +104,7 @@
 .head-img{
 	max-width: 250px;
 	height: 250px;
+}
+.project-data{
+	overflow: visible;
 }
