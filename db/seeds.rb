@@ -41,11 +41,11 @@ dryv = Team.create(name: 'DRY-V', speaker: dan, free: false,
 skynet = Team.create(name: 'SkyNet', speaker: aleck, free: true, 
 	places: 4)
 
-gimbl = Project.create(name: 'GIMBL', team: leen, logo: '2.png', 
+gimbl = Project.create(name: 'GIMBL', team: leen, logo: 'ava2.png', 
 	description: 'Find what you need to quickly profit', 
 	plan: 'One\nTwo\nThree', money: 'milliom grivnas')
 
-on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'a1.png', 
+on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'bg.jpg', 
 	description: 'The new way to spend time', 
 	plan: 'First\nSecond\nTrird', money: '1000 $')
 
