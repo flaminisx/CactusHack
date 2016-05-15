@@ -7,7 +7,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :portfolio_reference
       t.integer :team_id
       t.text :plan
-      t.srting :money
+      t.string :money
       t.timestamps null: false
     end
   end
