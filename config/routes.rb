@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'project/edit/:id', to: 'project#edit'
   get 'project/:id', to: 'project#show', as: "project"
   post 'project/update/:id', to: 'project#update'
+  post 'project/event/new', to: 'project#event'
   get 'team/:id', to: 'team#show', as: "team"
   get 'team/register', to: 'team#create'
 

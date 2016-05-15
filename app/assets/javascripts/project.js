@@ -23,6 +23,15 @@ $(document).ready(function(){
                 .replace("%link%", $("#link").val())
                 .replace("%description%", $("#event-desc").val());
     $("#portfolio-container").prepend($(template));
+    $.post("/project/event/new", {
+        heading: $("#name").val(),
+        date: $("#date").val(),
+        link: $("#link").val(),
+        description: $("#link").val(),
+        project_id: $("#project-id").val()
+      }, function(data){
+      console.log(data);
+    });
   });
 });
 
