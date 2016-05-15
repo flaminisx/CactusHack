@@ -68,6 +68,15 @@ class ProjectController < ApplicationController
   def create
 
   end
+  def event
+    e = Event.new
+    e.heading = params[:heading]
+    e.description = params[:description]
+    e.link = params[:link]
+    e.created_at = params[:date]
+    e.project_id = params[:project_id]
+    render json:e.save
+  end
   def update
     p = Project.find(params[:id])
     team = p.team

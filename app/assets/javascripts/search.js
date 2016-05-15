@@ -37,7 +37,10 @@ $(document).ready(function(){
       console.log(tags);
       var request = "/search?";
       if(str.length>0) request += "str="+str;
-      if(tags.length>0) request += "tag="+tags
+      if(tags.length>0){
+        if(str.length>0) request+="&";
+        request += "tag="+tags;
+      }
       location.href = request;
 
       e.preventDefault();
