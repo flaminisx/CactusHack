@@ -28,24 +28,30 @@ aleck = User.create(name: 'Alecksandr', surname: 'Neskin',
 	email: 'untitled_1@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
-yarick = = User.create(name: 'Yaroslav', surname: 'Agnuck', 
+yarick = User.create(name: 'Yaroslav', surname: 'Agnuck', 
 	email: 'untitled_2@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
-leen = Team.create(name: 'LeenTeam', speaker: dan) # jff, huh
+leen = Team.create(name: 'LeenTeam', speaker: dan, free: false, 
+    places: 2) # jff, huh
 
-dryv = Team.create(name: 'DRY-V', speaker: dan)
+dryv = Team.create(name: 'DRY-V', speaker: dan, free: false, 
+	places: 3)
 
-skynet = Team.create(name: 'SkyNet', speaker: aleck)
+skynet = Team.create(name: 'SkyNet', speaker: aleck, free: true, 
+	places: 4)
 
 gimbl = Project.create(name: 'GIMBL', team: leen, logo: '2.png', 
-	description: 'Find what you need to quickly profit')
+	description: 'Find what you need to quickly profit', 
+	plan: 'One\nTwo\nThree', money: 'milliom grivnas')
 
 on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'a1.png', 
-	description: 'The new way to spend time')
+	description: 'The new way to spend time', 
+	plan: 'First\nSecond\nTrird', money: '1000 $')
 
 pitcube = Project.create(name: 'PetCube', team: skynet, logo: 'a1.png', 
-	description: 'Robots for animals - this is a reality.')
+	description: 'Robots for animals - this is a reality.', 
+	plan: 'Cat\nDog\nParrot', money: '10000 UA')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for GIMBL', 
 	link: 'localhost:3000', project: gimbl, created_at: '2016-05-14T16:36:12.060Z',

@@ -18,6 +18,7 @@
 						<%= @project.description %>
 					</p>
 					<% if !@plan.nil? %>
+					    <p class="collection-item">   Our plan is: </p>
 					    <ul class="collection-item">
 					    	<% @plan.each do |p| %>
 					    	    <li><%= p %></li>
