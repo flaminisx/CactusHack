@@ -65,11 +65,11 @@ tolik = User.create(name: 'Anatoliy', surname: 'Donchenko',
 	password_digest: pass_1, free: false)
 
 kirill = User.create(name: 'Kirill', surname: 'Zernovoy', 
-	email: 'tolya_d@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'kirya_z@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
 miron = User.create(name: 'Miron', surname: 'Grechihin', 
-	email: 'tolya_d@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'miron_g@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
 leen = Team.create(name: 'LeenTeam', speaker: dan, free: false, 
@@ -85,7 +85,7 @@ moonton = Team.create(name: 'MoonTon', speaker: avram, free: true,
 	places: 3)
 
 coppertino = Team.create(name: 'Coppertino', speaker: petr, free: true, 
-	places: 5)
+	places: 2)
 
 quad = Team.create(name: 'Quad-Squad', speaker: anton, free: true, 
 	places: 5)
@@ -113,20 +113,20 @@ check_io = Project.create(name: 'Check-IO', team: moonton, logo: 'a1.png',
 	plan: 'Ukraine\nEurope\nWorld', money: '750000 UA')
 
 vox = Project.create(name: 'VOX', team: coppertino, logo: 'a1.png', 
-	description: 'The besr iTunes"s analog', 
-	plan: 'Ukraine\niPad\niMac', money: '7000 $')
+	description: 'The best iTunes\'s analog', 
+	plan: 'iPhone\niPad\niMac', money: '7000 $')
 
 talk = Project.create(name: 'Enable-Talk', team: quad, logo: 'a1.png', 
-	description: 'The besr iTunes"s analog', 
-	plan: 'Ukraine\niPad\niMac', money: '13000 $')
+	description: 'Your hands can speak', 
+	plan: 'Ukraine\nEurope\nWorld', money: '13000 $')
 
 iBlazer = Project.create(name: 'iBlazer', team: laser, logo: 'a1.png', 
 	description: 'The besr iTunes"s analog', 
-	plan: 'Ukraine\niPad\niMac', money: '60000 $')
+	plan: 'iPhone\niPad\niMac', money: '60000 $')
 
 jeapie = Project.create(name: 'Jeapie', team: jteam, logo: 'a1.png', 
 	description: 'The besr iTunes"s analog', 
-	plan: 'Ukraine\niPad\niMac', money: '60000 $')
+	plan: 'Ukraine\niPad\niMac', money: '3400 $')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for GIMBL', 
 	link: '/', project: gimbl, created_at: '2016-05-14T16:36:12.060Z',
@@ -229,6 +229,8 @@ aaas = Tag.create(tag: 'Acselerator aaS')
 game = Tag.create(tag: 'Game')
 ceo = Tag.create(tag: 'CEO')
 iMac = Tag.create(tag: 'iMac')
+mobile = Tag.create(tag: 'Mobile')
+device = Tag.create(tag: 'Device')
 
 UserTag.create(user: dann, tag: python)
 UserTag.create(user: dann, tag: ruby)
@@ -288,16 +290,16 @@ TeamTag.create(team: leen, tag: investor)
 TeamTag.create(team: dryv, tag: designer)
 TeamTag.create(team: dryv, tag: investor)
 
-TeamTag.create(team: skynet, tag: designer)
+TeamTag.create(team: skynet, tag: back)
 TeamTag.create(team: skynet, tag: investor)
 
-TeamTag.create(team: moonton, tag: designer)
+TeamTag.create(team: moonton, tag: JS)
 TeamTag.create(team: moonton, tag: investor)
 
 TeamTag.create(team: coppertino, tag: designer)
 TeamTag.create(team: coppertino, tag: investor)
 
-TeamTag.create(team: quad, tag: designer)
+TeamTag.create(team: quad, tag: python)
 TeamTag.create(team: quad, tag: investor)
 
 TeamTag.create(team: laser, tag: designer)
@@ -332,8 +334,8 @@ ProjectTag.create(project: talk, tag: iMac)
 
 ProjectTag.create(project: iBlazer, tag: startups)
 ProjectTag.create(project: iBlazer, tag: aaas)
-ProjectTag.create(project: iBlazer, tag: iMac)
+ProjectTag.create(project: iBlazer, tag: device)
 
 ProjectTag.create(project: jeapie, tag: startups)
 ProjectTag.create(project: jeapie, tag: aaas)
-ProjectTag.create(project: jeapie, tag: iMac)
+ProjectTag.create(project: jeapie, tag: mobile)
