@@ -12,7 +12,7 @@
 		<header>
 			<nav>
 				<div class="nav-wrapper main-color">
-					<a href="/project/1" class="brand-logo">Gimble</a>
+					<a href="/project/new" class="brand-logo"><img src="/images/logo-white.png" class="back-logo"></a>
 					<ul class="right hide-on-med-and-down">
 						<li><a href="/project/1">Главная</a></li>
 						<li><a href="/search/?tag=startup">Поиск</a></li>
@@ -28,7 +28,7 @@
 			<div class="container main-color">
 				<div class="row ">
 					<div class="col l6 s12">
-						<h5 class="white-text">Напиши нам</h5>
+						<h5 class="white-text">Напишите нам</h5>
 						<p class="grey-text text-lighten-4"><a href="mailto:leenteam@gmail.com">leenteam@gmail.com</a></p>
 					</div>
 					<div class="col l4 offset-l2 s12">
@@ -41,8 +41,23 @@
 				</div>
 			</div>
 		</footer>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript">
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+
+function createMyPortfolioPoint() {
+	document.getElementById('all-my-blocks').style.display = 'none';
+	document.getElementById('my-create-block').style.display = 'block'
+}
+
+function closeMyPortfolioPoint() {
+	document.getElementById('all-my-blocks').style.display = 'block';
+	document.getElementById('my-create-block').style.display = 'none'
+}
+
+</script>	
 			  	
 	</body>
 </html>
