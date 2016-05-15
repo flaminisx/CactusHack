@@ -9,7 +9,7 @@ $(document).ready(function(){
         speaker:$("#speaker-btn").attr("data-id"),
         description:$("#project-desc").val()
       }, function(data){
-        console.log(data);
+        if(data==true) Materialize.toast('Saved!', 4000);
       });
   });
   $("#speaker-dropdown li a").click(function(e){

@@ -1,14 +1,17 @@
 class ProjectController < ApplicationController
   def show
   	@project = Project.find(params[:id])
-  	if(@project.nil?) then redirect_to '/projects/' end
+  	if(@project.nil?) then
+      redirect_to '/projects/'
+      return
+    end
   	@events = @project.events
   	@team = @project.team
   	@speaker = @team.speaker
   	@tags = @project.tags
-  	if(!@project.plan.nil?) then 
+  	if(!@project.plan.nil?) then
         @plan = @project.plan.split('\n')
-    end 
+    end
   	respond_to do |format|
   		format.json {
   		    render json: @project.to_json()
@@ -28,7 +31,10 @@ class ProjectController < ApplicationController
 
   def create
   	@user = User.find(session[:user_id])
-  	if (@user.nil?) then redirect_to '/login/' end
+  	if (@user.nil?) then
+      redirect_to '/login/'
+      return
+    end
 
   	respond_to do |format|
   		format.html{ render :create, layout: 'layouts/account'}
@@ -37,11 +43,20 @@ class ProjectController < ApplicationController
 
   def edit
   	@project = Project.find(params[:id])
-    if(@project.nil?) then redirect_to '/project/create' end
+    if(@project.nil?) then
+      redirect_to '/project/create'
+      return
+    end
   	@events = @project.events
   	@user = User.find(session[:user_id])
-  	if (@user.nil?)	then redirect_to '/login/' end
-  	if (!@user.teams.include?(@project.team)) then redirect_to '/404.html' end
+  	if (@user.nil?)	then
+      redirect_to '/login/'
+      return
+    end
+  	if (!@user.teams.include?(@project.team)) then
+      redirect_to '/404.html'
+      return
+    end
     @events = @project.events
     @team = @project.team
     @speaker = @team.speaker
