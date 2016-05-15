@@ -25,43 +25,48 @@ class ProjectController < ApplicationController
 
   def create
   	@user = User.find(session[:user_id])
-  	if (@user.nil?) then redirect_to '/login/' end 
+  	if (@user.nil?) then redirect_to '/login/' end
 
   	respond_to do |format|
-  		format.html{ render :edit, layout: 'layouts/account'}
+  		format.html{ render :create, layout: 'layouts/account'}
   	end
   end
 
   def edit
   	@project = Project.find(params[:id])
+    if(@project.nil?) then redirect_to '/project/create' end
   	@events = @project.events
-
   	@user = User.find(session[:user_id])
   	if (@user.nil?)	then redirect_to '/login/' end
   	if (!@user.teams.include?(@project.team)) then redirect_to '/404.html' end
-  		
+    @events = @project.events
+    @team = @project.team
+    @speaker = @team.speaker
+    @tags = @project.tags
   	respond_to do |format|
   		format.html{ render :edit, layout: 'layouts/account'}
   	end
   end
-end
+  def create
 
-  # def create
-  # 	user = User.new(
-	 #  					name: params['name'],
-	 #  					surname: params['surname'],
-	 #  					email: params['email'],
-	 #  					password: params['password'],
-	 #  					password_confirmation: params['repeat']
-  # 					)
+  end
+  def update
+    p = Project.find(params[:id])
+    team = p.team
+    team.speaker = User.find(params[:speaker])
+    team.save
+    p.description = params[:description]
+    render json: p.save
+  end
+end
+  # def add
   # 	respond_to do |format|
-  # 		if user.save
-  # 			flash[:notice] = 'Successfully registered'
-  # 			session[:user_id] = user.id
-  # 			format.html{ redirect_to user}
+  # 		if project.save
+  # 			flash[:notice] = 'Successfully created new project'
+  # 			format.html{ redirect_to project}
   # 		else
-  # 			flash[:notice] = 'Error while registration'
-  # 			format.html{ redirect_to action: "register"}
+  # 			flash[:notice] = 'Error!'
+  # 			format.html{ redirect_to action: "create"}
   # 		end
   # 	end
   # end

@@ -5,11 +5,10 @@ Rails.application.routes.draw do
   get 'project/create', to: 'project#create'
   get 'project/edit/:id', to: 'project#edit'
   get 'project/:id', to: 'project#show', as: "project"
-  get 'project/register', to: 'event#create'
-
+  post 'project/update/:id', to: 'project#update'
   get 'team/:id', to: 'team#show', as: "team"
   get 'team/register', to: 'team#create'
-  
+
 
   get 'user/show'
   get 'user/edit'
