@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20160514125146) do
     t.string   "logo"
     t.string   "portfolio_reference"
     t.integer  "team_id"
+    t.text     "plan"
+    t.string   "money"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -62,6 +64,9 @@ ActiveRecord::Schema.define(version: 20160514125146) do
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.integer  "speaker_id"
+    t.boolean  "free"
+    t.integer  "places"
+    t.string   "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -85,6 +90,7 @@ ActiveRecord::Schema.define(version: 20160514125146) do
     t.string   "surname"
     t.string   "email"
     t.string   "avatar"
+    t.boolean  "free"
     t.string   "password_digest"
     t.string   "salt"
     t.datetime "created_at",      null: false
