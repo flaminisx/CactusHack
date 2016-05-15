@@ -28,24 +28,45 @@ aleck = User.create(name: 'Alecksandr', surname: 'Neskin',
 	email: 'untitled_1@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
-yarick = =  User.create(name: 'Yaroslav', surname: 'Agnuck', 
+yarick =  User.create(name: 'Yaroslav', surname: 'Agnuck', 
 	email: 'untitled_2@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
-leen = Team.create(name: 'LeenTeam', speaker: dan) 
+lyab = User.create(name: 'Alecksandr', surname: 'Lyabuh', 
+	email: 'untitled_3@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
 
-dryv = Team.create(name: 'DRY-V', speaker: dan)
+avram = User.create(name: 'Liza', surname: 'Avramenko', 
+	email: 'untitled_4@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
 
-skynet = Team.create(name: 'SkyNet', speaker: aleck)
+leen = Team.create(name: 'LeenTeam', speaker: dan, free: false, 
+    places: 2) # jff, huh
+
+dryv = Team.create(name: 'DRY-V', speaker: dan, free: false, 
+	places: 3)
+
+skynet = Team.create(name: 'SkyNet', speaker: aleck, free: true, 
+	places: 4)
+
+moonton = Team.create(name: 'MoonTon', speaker: avram, free: true, 
+	places: 3)
 
 gimbl = Project.create(name: 'GIMBL', team: leen, logo: '2.png', 
-	description: 'Find what you need to quickly profit')
+	description: 'Find what you need to quickly profit', 
+	plan: 'One\nTwo\nThree', money: 'milliom grivnas')
 
 on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'a1.png', 
-	description: 'The new way to spend time')
+	description: 'The new way to spend time', 
+	plan: 'First\nSecond\nTrird', money: '1000 $')
 
 pitcube = Project.create(name: 'PetCube', team: skynet, logo: 'a1.png', 
-	description: 'Robots for animals - this is a reality.')
+	description: 'Robots for animals - this is a reality.', 
+	plan: 'Cat\nDog\nParrot', money: '10000 UA')
+
+check_io = Project.create(name: 'Check-IO', team: moonton, logo: 'a1.png', 
+	description: 'Online', 
+	plan: 'Ukraine\nEurope\nWorld', money: '750000 UA')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for GIMBL', 
 	link: 'localhost:3000', project: gimbl, created_at: '2016-05-14T16:36:12.060Z',
@@ -79,6 +100,9 @@ UserTeam.create(user: dan, team: dryv)
 UserTeam.create(user: aleck, team: skynet)
 UserTeam.create(user: yarick, team: skynet)
 
+UserTeam.create(user: avram, team: moonton)
+UserTeam.create(user: lyab, team: moonton)
+
 manager = Tag.create(tag: 'manager')
 designer = Tag.create(tag: 'designer')
 investor = Tag.create(tag: 'investor')
@@ -92,7 +116,7 @@ quests = Tag.create(tag: 'Quests')
 startups = Tag.create(tag: 'Startups')
 saas = Tag.create(tag: 'SaaS')
 aaas = Tag.create(tag: 'Acselerator aaS')
-ceo = Tag.create(tag: 'CEO')
+game = Tag.create(tag: 'Game')
 
 UserTag.create(user: dann, tag: python)
 UserTag.create(user: dann, tag: ruby)
@@ -112,6 +136,14 @@ UserTag.create(user: aleck, tag: python)
 UserTag.create(user: yarick, tag: ceo)
 UserTag.create(user: yarick, tag: designer)
 
+UserTag.create(user: lyab, tag: python)
+UserTag.create(user: lyab, tag: JS)
+UserTag.create(user: lyab, tag: ruby)
+UserTag.create(user: lyab, tag: back)
+
+UserTag.create(user: avram, tag: ceo)
+UserTag.create(user: avram, tag: manager)
+
 TeamTag.create(team: leen, tag: designer)
 TeamTag.create(team: leen, tag: investor)
 
@@ -120,6 +152,9 @@ TeamTag.create(team: dryv, tag: investor)
 
 TeamTag.create(team: skynet, tag: designer)
 TeamTag.create(team: skynet, tag: investor)
+
+TeamTag.create(team: moonton, tag: designer)
+TeamTag.create(team: moonton, tag: investor)
 
 ProjectTag.create(project: gimbl, tag: startups)
 ProjectTag.create(project: gimbl, tag: aaas)
@@ -132,3 +167,7 @@ ProjectTag.create(project: on_point, tag: saas)
 ProjectTag.create(project: pitcube, tag: startups)
 ProjectTag.create(project: pitcube, tag: aaas)
 ProjectTag.create(project: pitcube, tag: saas)
+
+ProjectTag.create(project: check_io, tag: startups)
+ProjectTag.create(project: check_io, tag: aaas)
+ProjectTag.create(project: check_io, tag: game)
