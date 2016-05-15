@@ -117,6 +117,7 @@ startups = Tag.create(tag: 'Startups')
 saas = Tag.create(tag: 'SaaS')
 aaas = Tag.create(tag: 'Acselerator aaS')
 game = Tag.create(tag: 'Game')
+ceo = Tag.create(tag: 'CEO')
 
 UserTag.create(user: dann, tag: python)
 UserTag.create(user: dann, tag: ruby)
