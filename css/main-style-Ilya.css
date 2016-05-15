@@ -1,0 +1,49 @@
+.ilya_line{
+	/*position:absolute;
+	margin-left: -2.5px;
+	top:2.9em;
+	left:50%;*/
+	margin:0 auto;
+	width:5px;
+	height:300px;
+}
+
+.card{
+	height:250px;
+}
+
+.ilya_black{
+	background:black;
+}
+
+.ilya_main_circle {
+	margin:0 auto;
+	width:5em;
+	height:5em; 
+	border:solid 5px;
+	border-radius:5em; 
+}
+
+.ilya_circle{
+	position:relative;
+	top:50%;
+	margin-top:-10px;
+	margin-left:-7.5px;
+	width:20px;
+	height:20px;
+	border-radius:20px;
+}
+
+.ilya_line_black{
+	border:#000000;
+}
+
+.ilya_data{
+	font-size: 20px;
+	margin:0 auto;
+}
+
+.ilya-no-margin
+{
+	margin-bottom: 0 !important;	
+}
