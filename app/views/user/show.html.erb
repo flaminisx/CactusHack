@@ -46,6 +46,8 @@
 				        		<div class="card-reveal">
 				        			<span class="card-title grey-text text-darken-4"><%= p.name %><i class="material-icons right">more_vert</i></span>
 				        			<p><%= p.description %></p>
+				        			<p><%= p.plan.gsub!('\n', '<br>') %></p>
+				        			<p>We need <%= p.money %></p>
 				        		</div>
 				        	</div>
 				        </div>
