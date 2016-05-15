@@ -28,11 +28,11 @@ aleck = User.create(name: 'Alecksandr', surname: 'Neskin',
 	email: 'untitled_1@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
-yarick = = User.create(name: 'Yaroslav', surname: 'Agnuck', 
+yarick = =  User.create(name: 'Yaroslav', surname: 'Agnuck', 
 	email: 'untitled_2@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
-leen = Team.create(name: 'LeenTeam', speaker: dan) # jff, huh
+leen = Team.create(name: 'LeenTeam', speaker: dan) 
 
 dryv = Team.create(name: 'DRY-V', speaker: dan)
 
