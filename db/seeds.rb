@@ -120,7 +120,7 @@ talk = Project.create(name: 'Enable-Talk', team: quad, logo: 'a1.png',
 	description: 'The besr iTunes"s analog', 
 	plan: 'Ukraine\niPad\niMac', money: '13000 $')
 
-iBlazer = Project.create(name: 'iBlazer', team: quad, logo: 'a1.png', 
+iBlazer = Project.create(name: 'iBlazer', team: laser, logo: 'a1.png', 
 	description: 'The besr iTunes"s analog', 
 	plan: 'Ukraine\niPad\niMac', money: '60000 $')
 
