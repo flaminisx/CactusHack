@@ -25,19 +25,19 @@ iliya = User.create(name: 'Iliya', surname: 'Chernyavskiy',
 	password_digest: pass_1, free: true)
 
 aleck = User.create(name: 'Alecksandr', surname: 'Neskin', 
-	email: 'untitled_1@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'sasha_n@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
 yarick =  User.create(name: 'Yaroslav', surname: 'Agnuck', 
-	email: 'untitled_2@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'yarick_a@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: true)
 
 lyab = User.create(name: 'Alecksandr', surname: 'Lyabuh', 
-	email: 'untitled_3@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'sasha_l@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
 avram = User.create(name: 'Liza', surname: 'Avramenko', 
-	email: 'untitled_4@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'liza_a@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: true)
 
 ivan = User.create(name: 'Ivan', surname: 'Ablamsckiy', 
@@ -45,7 +45,15 @@ ivan = User.create(name: 'Ivan', surname: 'Ablamsckiy',
 	password_digest: pass_1, free: false)
 
 petr = User.create(name: 'Petr', surname: 'Bondarevskiy', 
-	email: 'ivan_a@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'petr_b@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: false)
+
+anton = User.create(name: 'Anton', surname: 'Stepanov', 
+	email: 'anton_s@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	password_digest: pass_1, free: true)
+
+dima = User.create(name: 'Dmitriy', surname: 'Samoilenlo', 
+	email: 'dima_s@gmail.com', salt: salt_1, avatar: 'ava2.png',
 	password_digest: pass_1, free: false)
 
 leen = Team.create(name: 'LeenTeam', speaker: dan, free: false, 
@@ -60,8 +68,12 @@ skynet = Team.create(name: 'SkyNet', speaker: aleck, free: true,
 moonton = Team.create(name: 'MoonTon', speaker: avram, free: true, 
 	places: 3)
 
-coppertino = Team.create(name: 'Coppertino', speaker: avram, free: true, 
+coppertino = Team.create(name: 'Coppertino', speaker: petr, free: true, 
 	places: 5)
+
+quad = Team.create(name: 'Quad-Squad', speaker: anton, free: true, 
+	places: 5)
+
 
 gimbl = Project.create(name: 'GIMBL', team: leen, logo: 'logo.png', 
 	description: 'Find what you need to quickly profit', 
@@ -112,10 +124,10 @@ Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests',
 	heading: 'Views')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for Coppertino', 
-	link: 'localhost:3000', project: coppertino, created_at: '2016-03-28T16:36:12.060Z',
+	link: 'localhost:3000', project: vox, created_at: '2016-03-28T16:36:12.060Z',
 	heading: 'Server')
 Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
-	link: 'localhost:3000', project: coppertion, created_at: '2016-04-28T20:36:12.060Z', 
+	link: 'localhost:3000', project: vox, created_at: '2016-04-28T20:36:12.060Z', 
 	heading: 'Views')
 
 
