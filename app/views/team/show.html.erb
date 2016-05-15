@@ -17,6 +17,13 @@
 		                <p class="collection-item">We have <%= @team.places %> free places</p>
 					<% end %>
 					<a href="/user/<%= @speaker.id%>" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @speaker.name %></a>
+					<% if @users.size != 0 %>
+					    <p class="collection-item">Our team is:
+					    	<% @users.each do |u| %>
+		                    <span class="chip"><a href="/user/<%= u.id %>"><%= u.name %></a></span>
+                            <% end %>
+					    </p>
+					<% end %>
 				</div>
 			</div>
 		</div>
@@ -38,6 +45,8 @@
 				        		<div class="card-reveal">
 				        			<span class="card-title grey-text text-darken-4"><%= p.name %><i class="material-icons right">more_vert</i></span>
 				        			<p><%= p.description %></p>
+				        			<p><%= p.plan.gsub!('\n', '<br>') %></p>
+				        			<p>We need <%= p.money %></p>
 				        		</div>
 				        	</div>
 				        </div>

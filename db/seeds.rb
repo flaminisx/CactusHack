@@ -9,19 +9,19 @@ salt_1 = BCrypt::Engine.generate_salt
 pass_1 = BCrypt::Engine.hash_secret('password_1', salt_1)
 
 dann = User.create(name: 'Daniil', surname: 'Anichin', 
-	email: 'anichindaniil@gmail.com', salt: salt_1, avatar: 'a1.jpg',
+	email: 'anichindaniil@gmail.com', salt: salt_1, avatar: 'daniil.jpg',
 	password_digest: pass_1, free: false)
 
 igor = User.create(name: 'Igor', surname: 'TheBest', 
-	email: 'optimum.flaminis@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'optimum.flaminis@gmail.com', salt: salt_1, avatar: 'igor.jpg',
 	password_digest: pass_1, free: false)
 
 dan = User.create(name: 'Danil', surname: 'Sizov', 
-	email: 'danilsizov3@gmail.com', salt: salt_1, avatar: 'a1.jpg',
+	email: 'danilsizov3@gmail.com', salt: salt_1, avatar: 'danil.jpg',
 	password_digest: pass_1, free: true)
 
 iliya = User.create(name: 'Iliya', surname: 'Chernyavskiy', 
-	email: 'iliachernyavsckiy@gmail.com', salt: salt_1, avatar: 'ava2.png',
+	email: 'iliachernyavsckiy@gmail.com', salt: salt_1, avatar: 'iliya.jpg',
 	password_digest: pass_1, free: true)
 
 aleck = User.create(name: 'Alecksandr', surname: 'Neskin', 
@@ -52,11 +52,11 @@ skynet = Team.create(name: 'SkyNet', speaker: aleck, free: true,
 moonton = Team.create(name: 'MoonTon', speaker: avram, free: true, 
 	places: 3)
 
-gimbl = Project.create(name: 'GIMBL', team: leen, logo: '2.png', 
+gimbl = Project.create(name: 'GIMBL', team: leen, logo: 'logo.png', 
 	description: 'Find what you need to quickly profit', 
 	plan: 'One\nTwo\nThree', money: 'milliom grivnas')
 
-on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'a1.png', 
+on_point = Project.create(name: 'OnPoint', team: dryv, logo: 'bg.jpg', 
 	description: 'The new way to spend time', 
 	plan: 'First\nSecond\nTrird', money: '1000 $')
 
