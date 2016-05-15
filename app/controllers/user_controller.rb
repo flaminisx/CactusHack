@@ -60,6 +60,7 @@ class UserController < ApplicationController
   	respond_to do |format|
   		if user
   			session[:user_id] = user.id
+        if (!request.env['HTTP_REFERER'].nil?) then redirect_to :back end
   			format.html{ redirect_to user}
   		else
   			flash[:notice] = 'Invalid email/password'

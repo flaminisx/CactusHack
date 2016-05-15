@@ -22,6 +22,28 @@ class ProjectController < ApplicationController
   		format.html{ redirect_to '/404.html' }
   	end
   end
+
+  def create
+  	@user = User.find(session[:user_id])
+  	if (@user.nil?) then redirect_to '/login/' end 
+
+  	respond_to do |format|
+  		format.html{ render :edit, layout: 'layouts/account'}
+  	end
+  end
+
+  def edit
+  	@project = Project.find(params[:id])
+  	@events = @project.events
+
+  	@user = User.find(session[:user_id])
+  	if (@user.nil?)	then redirect_to '/login/' end
+  	if (!@user.teams.include?(@project.team)) then redirect_to '/404.html' end
+  		
+  	respond_to do |format|
+  		format.html{ render :edit, layout: 'layouts/account'}
+  	end
+  end
 end
 
   # def create
