@@ -16,6 +16,14 @@ $(document).ready(function(){
     $("#speaker-btn").text($(e.target).text());
     $("#speaker-btn").attr("data-id", $(e.target).attr("data-id"));
   });
+  $("#event-new").click(function(e){
+    var template = $("#template-container").clone().html();
+    template = template.replace("%name%", $("#name").val())
+                .replace("%created_at%", $("#date").val())
+                .replace("%link%", $("#link").val())
+                .replace("%description%", $("#event-desc").val());
+    $("#portfolio-container").prepend($(template));
+  });
 });
 
 
