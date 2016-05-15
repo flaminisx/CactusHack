@@ -2,14 +2,14 @@
   <h4>Search</h4>
   <div class="row">
     <div class="col l3">
-      <ul class="collection">
-        <li class="collection-item">People</li>
-        <li class="collection-item">Teams</li>
-        <li class="collection-item">Projects</li>
+      <ul class="collection types">
+        <a href="#person" class="collection-item">People</a>
+        <a href="#team" class="collection-item">Teams</a>
+        <a href="#project" class="collection-item">Projects</a>
       </ul>
     </div>
     <div class="col l9">
-      <input type="search" id="searchbar" value='some text'/>
+      <input type="search" id="searchbar" value='<%= @request%>'/>
       <ul class="collection">
       <% @data.each do |e, i| %>
         <li class="collection-item avatar rezult-item" id=<%= i %>>

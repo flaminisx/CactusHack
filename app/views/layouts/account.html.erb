@@ -14,9 +14,9 @@
 				<div class="nav-wrapper main-color">
 					<a href="/project/1" class="brand-logo">Gimble</a>
 					<ul class="right hide-on-med-and-down">
-						<li><a href="/project/1">Главная</a></li>
-						<li><a href="/search/?tag=startup">Поиск</a></li>
-						<li class="active"><a class="dropdown-button" href="/user/">Профиль</a></li>
+						<li <% if params[:controller]=="" then %>class="active"<% end %>><a href="/project/1">Главная</a></li>
+						<li <% if params[:controller]=="SearchController" then %>class="active"<% end %>><a href="/search/?tag=startup">Поиск</a></li>
+						<li <% if params[:controller]=="UserController" then %>class="active"<% end %>><a class="dropdown-button" href="/user/">Профиль</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -41,8 +41,5 @@
 				</div>
 			</div>
 		</footer>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
-			  	
 	</body>
 </html>
