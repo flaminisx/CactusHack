@@ -95,45 +95,56 @@ vox = Project.create(name: 'VOX', team: coppertino, logo: 'a1.png',
 	description: 'The besr iTunes"s analog', 
 	plan: 'Ukraine\niPad\niMac', money: '7000 $')
 
+talk = Project.create(name: 'Enable-Talk', team: quad, logo: 'a1.png', 
+	description: 'The besr iTunes"s analog', 
+	plan: 'Ukraine\niPad\niMac', money: '7000 $')
+
 Event.create(photo: 'bg.jpg', description: 'Started local server for GIMBL', 
-	link: 'localhost:3000', project: gimbl, created_at: '2016-05-14T16:36:12.060Z',
+	link: '/', project: gimbl, created_at: '2016-05-14T16:36:12.060Z',
 	heading: 'Server')
 Event.create(photo: 'bg.jpg', description: 'Added pretty view for projects', 
-	link: 'localhost:3000', project: gimbl, created_at: '2016-05-14T20:36:12.060Z',
+	link: '/', project: gimbl, created_at: '2016-05-14T20:36:12.060Z',
 	heading: 'Views')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for OnPoint', 
-	link: 'localhost:3000', project: on_point, created_at: '2016-03-28T16:36:12.060Z',
+	link: '/', project: on_point, created_at: '2016-03-28T16:36:12.060Z',
 	heading: 'Server')
 Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
-	link: 'localhost:3000', project: on_point, created_at: '2016-04-28T20:36:12.060Z', 
+	link: '/', project: on_point, created_at: '2016-04-28T20:36:12.060Z', 
 	heading: 'Views')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for Pitcube', 
-	link: 'localhost:3000', project: pitcube, created_at: '2016-03-28T16:36:12.060Z',
+	link: '/', project: pitcube, created_at: '2016-03-28T16:36:12.060Z',
 	heading: 'Server')
 Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
-	link: 'localhost:3000', project: pitcube, created_at: '2016-04-28T20:36:12.060Z', 
+	link: '/', project: pitcube, created_at: '2016-04-28T20:36:12.060Z', 
 	heading: 'Views')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for Check-IO', 
-	link: 'localhost:3000', project: check_io, created_at: '2016-03-28T16:36:12.060Z',
+	link: '/', project: check_io, created_at: '2016-03-28T16:36:12.060Z',
 	heading: 'Server')
 Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
-	link: 'localhost:3000', project: check_io, created_at: '2016-04-28T20:36:12.060Z', 
+	link: '/', project: check_io, created_at: '2016-04-28T20:36:12.060Z', 
 	heading: 'Views')
 
 Event.create(photo: 'bg.jpg', description: 'Started local server for Coppertino', 
-	link: 'localhost:3000', project: vox, created_at: '2016-03-28T16:36:12.060Z',
+	link: '/', project: vox, created_at: '2016-03-28T16:36:12.060Z',
 	heading: 'Server')
 Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
-	link: 'localhost:3000', project: vox, created_at: '2016-04-28T20:36:12.060Z', 
+	link: '/', project: vox, created_at: '2016-04-28T20:36:12.060Z', 
+	heading: 'Views')
+
+Event.create(photo: 'bg.jpg', description: 'Started local server for Coppertino', 
+	link: '/', project: talk, created_at: '2016-03-28T16:36:12.060Z',
+	heading: 'Server')
+Event.create(photo: 'bg.jpg', description: 'Added pretty view for quests', 
+	link: '/', project: talk, created_at: '2016-04-28T20:36:12.060Z', 
 	heading: 'Views')
 
 
 UserTeam.create(user: iliya, team: leen)
 UserTeam.create(user: dann, team: leen)
-UserTeam.create(user: igor, team: leen)
+UserTeam.create(user: igor, team: leen) 
 UserTeam.create(user: dan, team: leen)
 
 UserTeam.create(user: dann, team: dryv)
@@ -148,6 +159,10 @@ UserTeam.create(user: lyab, team: moonton)
 
 UserTeam.create(user: ivan, team: coppertino)
 UserTeam.create(user: petr, team: coppertino)
+
+UserTeam.create(user: dima, team: quad)
+UserTeam.create(user: anton, team: quad)
+
 
 manager = Tag.create(tag: 'manager')
 designer = Tag.create(tag: 'designer')
@@ -200,6 +215,12 @@ UserTag.create(user: petr, tag: JS)
 UserTag.create(user: petr, tag: ruby)
 UserTag.create(user: petr, tag: back)
 
+UserTag.create(user: dima, tag: ceo)
+UserTag.create(user: dima, tag: manager)
+
+UserTag.create(user: anton, tag: ceo)
+UserTag.create(user: anton, tag: manager)
+
 TeamTag.create(team: leen, tag: designer)
 TeamTag.create(team: leen, tag: investor)
 
@@ -214,6 +235,9 @@ TeamTag.create(team: moonton, tag: investor)
 
 TeamTag.create(team: coppertino, tag: designer)
 TeamTag.create(team: coppertino, tag: investor)
+
+TeamTag.create(team: quad, tag: designer)
+TeamTag.create(team: quad, tag: investor)
 
 ProjectTag.create(project: gimbl, tag: startups)
 ProjectTag.create(project: gimbl, tag: aaas)
@@ -234,3 +258,7 @@ ProjectTag.create(project: check_io, tag: game)
 ProjectTag.create(project: vox, tag: startups)
 ProjectTag.create(project: vox, tag: aaas)
 ProjectTag.create(project: vox, tag: iMac)
+
+ProjectTag.create(project: talk, tag: startups)
+ProjectTag.create(project: talk, tag: aaas)
+ProjectTag.create(project: talk, tag: iMac)
