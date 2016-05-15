@@ -11,7 +11,9 @@
 				<!-- <div class="divider"></div> -->
 				<div class="collection">
 					<p class="collection-item center-align"><%= @user.email %></p>
-					<p class="collection-item">Team:<span class="badge"><a href="/team/<%= @teams[0].id %>"><%= @teams[0].name %></a></span></p>
+					<% if @teams.size != 0 then %>
+					    <p class="collection-item">Team:<span class="badge"><a href="/team/<%= @teams[0].id %>"><%= @teams[0].name %></a></span></p>
+					<% end %>
 					<a href="#" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @user.name %></a>
 				</div>
 				<div>
@@ -27,8 +29,8 @@
 				<div class="head-circle"></div>
 				    <% @projects.each do |p|%>
 				        <div class="row valign-wrapper right-card no-margin">
-				        	<div class="col s4 valign hline"></div>
-				        	<div class="col s8 card feature">
+				        	<div class="col s5 valign hline"></div>
+				        	<div class="col s9 card feature">
 				        		<div class="card-image waves-effect waves-block waves-light">
 				        		<img class="activator" src= "/images/<%= ((!p.logo.nil?) ? p.logo : 'bg.jpg')%>">
 				        		</div>

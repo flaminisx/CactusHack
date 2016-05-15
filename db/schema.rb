@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20160514125146) do
 
   create_table "events", force: :cascade do |t|
     t.string   "photo"
+    t.string   "heading"
     t.text     "description"
     t.string   "link"
     t.integer  "project_id"

@@ -22,13 +22,25 @@ class SearchController < ApplicationController
       @tags.map { |e|
         @request += "#" + e + " "
         if type=="person" || type.nil? then
+          if (Tag.where(tag: e).first.nil?) then
+            redirect_to '/404.html'
+            return
+          end
           @data |= Tag.where(tag: e).first.users.as_json.map { |e| e.merge!(type: "person") }
         end
         if type=="project" || type.nil? then
-          @data |= Tag.where(tag: e).first.teams.as_json.map { |e| e.merge!(type: "project") }
+          if (Tag.where(tag: e).first.nil?) then
+            redirect_to '/404.html'
+            return
+          end
+          @data |= Tag.where(tag: e).first.projects.as_json.map { |e| e.merge!(type: "project") }
         end
         if type=="team" || type.nil? then
-          @data |= Tag.where(tag: e).first.projects.as_json.map { |e| e.merge!(type: "team") }
+          if (Tag.where(tag: e).first.nil?) then
+            redirect_to '/404.html'
+            return
+          end
+          @data |= Tag.where(tag: e).first.teams.as_json.map { |e| e.merge!(type: "team") }
         end
       }
     end
