@@ -1,0 +1,40 @@
+<main class="container-fluid">
+  <div class="container">
+    <h4>Search</h4>
+    <div class="row">
+      <div class="col l3">
+        <ul class="collection types">
+          <a href="#person" class="collection-item">People</a>
+          <a href="#team" class="collection-item">Teams</a>
+          <a href="#project" class="collection-item">Projects</a>
+        </ul>
+      </div>
+      <div class="col l9">
+        <input type="search" id="searchbar" value='<%= @request%>'/>
+        <ul class="collection">
+        <% @data.each do |e, i| %>
+          <li class="collection-item avatar rezult-item" id=<%= i %>>
+            <input type="hidden" name="type" value="<%= e[:type]%>">
+            <input type="hidden" name= "id" value="<%= e["id"] %>">
+            <img src="/images/<%= e["avatar"]%>" alt="" class="circle">
+            <span class="title"><%= e["name"] %></span>
+            <br>
+            <% if e[:type] == "person" then %>
+              <a href="/user/<%= e["id"] %>">Learn more..</a>
+            <% elsif e[:type] == "team" then %>
+              <a href="/team/<%= e["id"] %>">Learn more..</a>
+            <% elsif e[:type] == "project" then %>
+              <a href="/project/<%= e["id"] %>">Learn more..</a>
+            <% else %>
+              <a href="/404.html">Oops</a>
+            <% end %>
+            <a href="" class="secondary-content">
+              <div class="chip"><%= e[:type]%></div>
+          </a>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>

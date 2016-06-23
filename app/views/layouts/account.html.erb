@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gimbl</title>
+		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="utf-8">
+		<%= stylesheet_link_tag    'application', params[:controller], media: 'all' %>
+        <%= javascript_include_tag 'application', params[:controller] %>
+        <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="nav-wrapper main-color">
+					<a href="/project/create" class="brand-logo"><img src="/images/logo-white.png" class="back-logo"></a>
+					<ul class="right hide-on-med-and-down">
+						<li <% if params[:controller]=="" then %>class="active"<% end %>><a href="/project/1">Home</a></li>
+						<li <% if params[:controller]=="SearchController" then %>class="active"<% end %>><a href="/search/?tag=startup">Search</a></li>
+						<li <% if params[:controller]=="UserController" then %>class="active"<% end %>><a class="dropdown-button" href="/user/">Profile</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+	    <%= yield %>
+
+		<footer class="page-footer main-color">
+			<div class="container main-color">
+				<div class="row ">
+					<div class="col l6 s12">
+						<h5 class="white-text">Contact us</h5>
+						<p class="grey-text text-lighten-4"><a href="mailto:leenteam@gmail.com">leenteam@gmail.com</a></p>
+					</div>
+					<div class="col l4 offset-l2 s12">
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">VK</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

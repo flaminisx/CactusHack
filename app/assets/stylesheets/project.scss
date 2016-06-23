@@ -1,0 +1,110 @@
+// Place all the styles related to the project controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.margin-for-plus-photo
+{
+	margin:0 auto;
+	margin-top:50px;
+}
+
+.photo-active
+{
+	opacity:0.3;
+	transition:0.5s;
+}
+
+.photo-active:hover
+{
+	opacity:1;
+}
+
+#all-my-blocks
+{
+	display:block;
+}
+
+#my-create-block
+{
+	display:none;
+}
+
+.border
+{
+	border: 1px solid;
+}
+
+.main-color
+{
+	background: #3E454C !important;
+}
+.akcent-color
+{
+	background: #FF7F66;
+}
+.main-color-text
+{
+	color: #3E454C !important;
+}
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .back-logo
+  {
+  	height:65px;
+  	width:300px;
+  	background-size: 100% 100%;
+  }
+.account{
+	padding: 20px 0 10px 0;
+}
+.account{
+
+}
+.head-circle{
+	width:4em;
+	height:4em;
+	border:solid 4px #000;
+	border-radius:4em;
+	background: white;
+	z-index: 10;
+	margin-left: 2px;
+	transform: translateX(-50%);
+}
+.main-line{
+	width:5px;
+	height: 100%;
+	margin: 0 auto;
+	background: black;
+}
+.col.card.feature{
+	padding-left: 0;
+	padding-right: 0;
+
+}
+.hline{
+	height:4px;
+	background: #000;
+}
+.no-margin{
+	margin-bottom: 0 !important;
+}
+.row.valign-wrapper.right-card.no-margin{
+	border-left: 4px solid #000;
+	margin-left: 0;
+	margin-right: 0;
+}
+.head-img{
+	max-width: 250px;
+	height: 250px;
+}
+.project-data{
+	overflow: visible;
+}

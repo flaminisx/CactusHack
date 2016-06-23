@@ -1,0 +1,60 @@
+<main class="container-fluid">
+	<div class="row">
+		<div class="col l4">
+			<div class="container account">
+				<div class="valign center">
+					<%= image_tag "/images/"+((!@project.logo.nil?) ? @project.logo : 'bg.jpg'), class: "head-img circle"%><br>
+			        <h4 class="name"><%= @project.name %></h4>
+				</div>
+				<div class="collection">
+					<p class="collection-item">Team:<span class="chip"><a href="/team/<%= @team.id %>"><%= @team.name %></a></span></p>
+					<a href="/user/<%=@speaker.id %>" class="collection-item black-text waves-effect waves-light btn">Write a message to <%= @speaker.name %></a>
+				    <div class="collection-item">
+		                <% @tags.each do |t|%>
+		                    <div class="chip"><a href="/search/?tag=<%= t.tag %>">#<%= t.tag %></a></div>
+		                <% end %>
+				    </div>
+					<p class="collection-item">
+						<%= @project.description %>
+					</p>
+					<% if !@plan.nil? %>
+					    <p class="collection-item">   Our plan is: </p>
+					    <ul class="collection-item">
+					    	<% @plan.each do |p| %>
+					    	    <li><%= p %></li>
+                            <% end %>
+					    </ul>
+					<% end %>
+					<% if !@project.money.nil? %>
+					    <p class="collection-item">And we need <%= @project.money %>.</p>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<div class="col l8">
+			<div class="container projects">
+				<h4 class="center-align">Timeline: </h4>
+				<div class="head-circle"></div>
+				    <% @events.each do |e|%>
+				        <% if e.nil? then continue end %>
+				        <div class="row valign-wrapper right-card no-margin">
+				        	<div class="col s5 valign hline"></div>
+				        	<div class="col s7 card feature">
+				        		<div class="card-image waves-effect waves-block waves-light">
+				        		<img class="activator" src= "/images/<%= ((!e.photo.nil?) ? e.photo : 'bg.jpg')%>">
+				        		</div>
+				        		<div class="card-content">
+				        			<span class="card-title activator grey-text text-darken-4"><%= e.created_at %><i class="material-icons right">more_vert</i></span>
+				        			<p><a href="<%= e.link %>">This is a result link</a></p>
+				        		</div>
+				        		<div class="card-reveal">
+				        			<span class="card-title grey-text text-darken-4"><%= e.created_at %><i class="material-icons right">more_vert</i></span>
+				        			<p><%= e.description %></p>
+				        		</div>
+				        	</div>
+				        </div>
+				    <% end %>
+			</div>
+		</div>
+	</div>
+</main>
